@@ -7,14 +7,10 @@ eleventyNavigation:
   key: Home
   order: 0
 ---
-# Welcome
+# Hi! I'm Tony.
 
-This is a template for building a simple blog website with the [Eleventy static site generator](https://www.11ty.dev), with deployment to [Netlify](https://www.netlify.com).
+I’m a product designer and design manager with over a decade of experience building websites, apps, design systems, and design teams.
 
-Includes [Netlify CMS](https://www.netlifycms.org) for WYSIWYG content editing, and [Netlify Forms](https://www.netlify.com/docs/form-handling) for processing your site's form data.
+I manage the design systems team at [Keller Williams](https://kw.com), where our products serve over 180,000 agents worldwide.
 
-For more info on installation and usage, view the [project repo]({{ pkg.repository.url }}) on GitHub.
-
-Or click the button below to deploy your own copy of this project to Netlify.
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/danurbanowicz/eleventy-netlify-boilerplate&stack=cms)
+Previously, I was a product design lead at [Strava](https://strava.com), and I started my career as a visual designer at [Odopod](http://odopod.com), a product and service design agency in San Francisco.

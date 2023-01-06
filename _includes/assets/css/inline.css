@@ -3,8 +3,10 @@
   /* Fonts */
   
   --monoFont: 'VCTR Mono', monospace;
+  --monoFontSpacing: 0.08em;
   --sansFont: 'Concourse', var(--systemFont), sans-serif;
   --systemFont: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  
   
   /* Global Colors */
   
@@ -41,7 +43,7 @@
   --pageBackgroundHi: var(--neutral100);
   --pageBackgroundLo: var(--neutral90);
   --labelPrimary: var(--neutral20);
-  --labelSecondary: var(--neutral40);
+  --labelSecondary: var(--neutral30);
   --actionColor: var(--indigo50);
   --actionColorHover:var(--indigo40);
   --actionColorActive:var(--indigo60);
@@ -58,7 +60,7 @@
 	--pageBackground: var(--neutral05);
 	--pageBackgroundHi: var(--neutral30);
 	--pageBackgroundLo: var(--neutral00);
-	--labelPrimary: var(--neutral90);
+	--labelPrimary: var(--neutral80);
 	--labelSecondary: var(--neutral70);
 	--actionColor: var(--magenta50);
 	--actionColorHover:var(--magenta60);
@@ -70,6 +72,11 @@
   }
 }
 
+/* Debug Styles */
+
+/* header, footer { background: pink; }
+main { background: orange; } */
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -78,7 +85,9 @@ html,
 body {
 	padding: 0;
 	margin: 0;
+	color: var(--labelSecondary);
 	font-family: var(--sansFont);
+	font-weight: 300;
 }
 
 body {
@@ -88,19 +97,49 @@ body {
 	background-color: var(--pageBackground);
 }
 
-main {
-	max-width: 37.5em;
-}
-
 p,
 pre,
 code {
 	line-height: 1.5;
 }
 
+h1,
+h2,
+h3,
+h4 {
+	color: var(--labelPrimary);
+	font-family: var(--sansFont);
+	font-weight: 600;
+	line-height: 1.25;
+}
+
+h5,
+h6 {
+	color: var(--labelPrimary);
+	font-family: var(--monoFont);
+	text-transform: uppercase;
+	letter-spacing: var(--monoFontSpacing);
+	font-weight: 600;
+	line-height: 1.5;
+}
+
+strong {
+	font-weight: 600;
+}
+
 a[href],
 a[href]:visited {
+	font-weight: 600;
 	color: var(--labelPrimary);
+}
+
+a[href]:hover,
+a[href]:focus {
+	color: var(--actionColorHover);
+}
+
+a[href]:active {
+	color: var(--actionColorActive);
 }
 
 a[href]:not(:hover) {
@@ -116,6 +155,7 @@ header,
 main,
 footer {
 	padding: 1em;
+	max-width: 36em;
 }
 
 main {
@@ -144,49 +184,45 @@ pre {
 	margin: .5em 0;
 }
 
-/* Header Logo (style as h2) */
-header > em {
-	display: block;
-	font-size: 2em;
-	margin: .67em 0;
-	font-weight: bold;
-	font-style: normal;
+/* Header & Footer Basic Styles */
+
+header,
+footer {
+	font-family: var(--monoFont);
+	letter-spacing: var(--monoFontSpacing);
+	text-transform: uppercase;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: start;
+	justify-content: space-between;
+	gap: 1em;
+}
+
+footer {
+	font-size: 0.9em;
 }
 
 /* Header Nav */
+
 header nav ul {
 	padding: 0;
+	margin: 0;
 	list-style: none;
-}
-
-header nav ul :first-child {
-	margin-left: 0;
-}
-
-header nav li {
-	display: inline-block;
-	margin: 0 .25em;
-}
-
-header nav li a {
-	padding: .25em .5em;
-	border-radius: .25em;
-}
-
-header nav li a[href]:not(:hover) {
-	text-decoration: none;
+	font-family: var(--monoFont);
+	text-transform: uppercase;
+	letter-spacing: var(--monoFontSpacing);
+	text-align: right;
 }
 
 header nav li a[data-current="current item"] {
-	background-color: white;
+	color: var(--actionColor);
 }
 
 /* Posts List */
 article {
 	margin-bottom: 1em;
 	padding-bottom: 1em;
-	border-bottom: 1px solid #eee;
-	border-bottom: 1px solid var(--labelSecondary);
+	border-bottom: 2px solid var(--dividerColor);
 }
 
 main > section > article > * {
@@ -195,28 +231,31 @@ main > section > article > * {
 }
 
 /* Post Tags */
+
 a[rel="tag"],
 a[rel="tag"]:visited {
 	display: inline-block;
-  vertical-align: text-top;
-  text-transform: uppercase;
-	letter-spacing: .1em;
-  font-size: .625em;
-  padding: 0 .5em;
+	vertical-align: text-top;
+	font-family: var(--monoFont);
+	text-transform: uppercase;
+	letter-spacing: var(--monoFontSpacing);
+	font-weight: 600;
+	font-size: .625em;
+	padding: 0 .5em;
 	line-height: 2em;
 	height: 2em;
-  border: 1px solid var(--labelSecondary);
-	background-color: var(--labelSecondary);
+	border: 1px solid var(--dividerColor);
+	background-color: var(--pageBackgroundLo);
 	color: var(--labelPrimary);
-  border-radius: .25em;
-  text-decoration: none;
+	border-radius: .25em;
+	text-decoration: none;
 	margin: 0 .5em .5em 0;
 }
 
 a[rel="tag"]:hover {
-	border: 1px solid var(--labelPrimary);
-	background-color: var(--labelPrimary);
-	color: var(--labelSecondary);
+	border: 1px solid var(--actionColorHover);
+	background-color: var(--pageBackgroundHi);
+	color: var(--actionColorHover);
 }
 
 a[rel="tag"]:last-child {
@@ -224,39 +263,40 @@ a[rel="tag"]:last-child {
 }
 
 /* Contact Form */
+
 form {
-  display: grid;
+	display: grid;
 	padding: 2em 0;
 }
 
 form label {
-  display: none;
+	display: none;
 }
 
 input,
 textarea,
 button {
-  width: 100%;
-  padding: 1em;
-  margin-bottom: 1em;
+	width: 100%;
+	padding: 1em;
+	margin-bottom: 1em;
 	font-size: 1rem;
-	font-family: "Avenir", "Avenir Next", sans-serif;
+	font-family: var(--monoFont);
 }
 
 input,
 textarea {
-	border: 1px solid black;
+	border: 2px solid var(--dividerColor);
 }
 
 button {
-	border: 1px solid var(--labelPrimary);
-	background-color: var(--labelPrimary);
-	color: var(--labelSecondary);
+	border: 2px solid var(--actionColor);
+	background-color: var(--actionColor);
+	color: var(--pageBackgroundHi);
 	cursor: pointer;
 }
 
 @media screen and (min-width:768px) {
 	:root {
-		font-size: 1.1rem;
+		font-size: 1.25rem;
 	}
 }
