@@ -17,7 +17,7 @@
 	--size-xxxxl: 3rem;    /* 48px, 72px @768 */
 	
 	--line-height-body: 1.6;
-	--line-height-head: 1.1;
+	--line-height-head: 1.2;
 	--tracked-out: 0.05em;
 	
 	--font-family-mono: 'VCTR Mono', monospace;
@@ -182,43 +182,44 @@ pre {
 }
 
 h1.display {
-	font-size: var(--size-xxxl);
+	font-size: var(--size-xxxxl);
 }
 
 h2.display {
-	font-size: var(--size-xxl);
+	font-size: var(--size-xxxl);
 }
 
 h3.display {
-	font-size: var(--size-xl);
+	font-size: var(--size-xxl);
 }
 
 h1 {
-	font-size: var(--size-xl);
+	font-size: var(--size-xxxl);
 }
 
 h2 {
-	font-size: var(--size-lg);
+	font-size: var(--size-xxl);
 }
 
 h3 {
-	font-size: var(--size-md);
+	font-size: var(--size-xl);
 }
 
 h4 {
-	font-size: var(--size-base);
+	font-size: var(--size-lg);
 }
 
 h5 {
-	font-size: var(--size-base);
+	font-size: var(--size-md);
 }
 
 h6 {
-	font-size: var(--size-sm);
+	font-size: var(--size-base);
 }
 
 p.intro {
 	font-size: var(--size-lg);
+	line-height: var(--line-height-head);
 }
 
 p {
