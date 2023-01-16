@@ -9,7 +9,7 @@ eleventyNavigation:
 ---
 # Hi! I'm Tony.
 
-I’m a product designer and design manager with over a decade of experience building websites, apps, design systems, and design teams.
+I’m a product designer and design manager with over a decade of experience building websites, apps, design systems, and design teams. 
 
 I manage the design systems team at [Keller Williams](https://kw.com), where our products serve over 180,000 agents worldwide.
 
